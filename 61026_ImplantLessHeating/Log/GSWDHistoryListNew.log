@@ -1,0 +1,555 @@
+-----------------------------------------------------------------------------
+I.) Constant Parameter                                 11.Jun.2026  18:34:37
+-----------------------------------------------------------------------------
+Site Specific Parameter / Patient Data
+100  Code of installed gradient coil ...: AS82
+101  Code of installed GPA .............: K2309_2250V_951A
+102  Patient ID ........................: 946d103da49222d10cf082396dbe0d6f352d26e4
+103  Patient direction .................: Head first
+104  Patient position ..................: Supine
+
+Global parameter of stimulation monitor
+105  BitSet2BitsBack ...................: 18.510000
+106  Online_tolerance_factor1 ..........: 0.220000
+107  Online_tolerance_factor2 ..........: 0.950000
+108  HW_corr_factor_X ..................: 0.980000
+109  HW_corr_factor_Y ..................: 0.980000
+110  HW_corr_factor_Z ..................: 0.980000
+111  SW_corr_factor ....................: 1.000000
+112  Stim_corr_offset_X ................: 0.000000 [T/s]
+113  Stim_corr_offset_Y ................: 0.000000 [T/s]
+114  Stim_corr_offset_Z ................: 0.000000 [T/s]
+
+Parameter of dBdt-algorithm
+115  dBdt_Model_flag ...................: false
+116  Ellipsoid_flag ....................: false
+117  dBdt_limit_1(X) ...................:   20.00 [T/s]
+118  dBdt_limit_1(Y) ...................:   20.00 [T/s]
+119  dBdt_limit_1(Z) ...................:   20.00 [T/s]
+120  dBdt_limit_2(X) ...................: 1330.00 [T/s]
+121  dBdt_limit_2(Y) ...................: 1330.00 [T/s]
+122  dBdt_limit_2(Z) ...................: 1330.00 [T/s]
+123  T_limit_1 .........................:  0.0451 [ms]
+124  T_limit_2 .........................:  3.0000 [ms]
+125  dBdt_thresh_1(X) ..................:   20.00 [T/s]
+126  dBdt_thresh_1(Y) ..................:   20.00 [T/s]
+127  dBdt_thresh_1(Z) ..................:   20.00 [T/s]
+128  dBdt_thresh_2(X) ..................:  960.00 [T/s]
+129  dBdt_thresh_2(Y) ..................:  960.00 [T/s]
+130  dBdt_thresh_2(Z) ..................:  960.00 [T/s]
+131  T_thresh_1 ........................:  0.0025 [ms]
+132  T_thresh_2 ........................:  0.1200 [ms]
+
+Parameter of SAFE-algorithm
+133  Tau1X, Tau1Y, Tau1Z ...............: 0.19 2.00 2.00 [ms]
+134  Tau2X, Tau2Y, Tau2Z ...............: 0.03 2.00 0.17 [ms]
+135  Tau3X, Tau3Y, Tau3Z ...............: 2.00 0.22 2.00 [ms]
+136  A1x, A1y, A1z .....................: 0.44 0.57 0.42 [ms]
+137  A2x, A2y, A2z .....................: 0.00 0.18 0.49 [ms]
+138  A3x, A3y, A3z .....................: 0.56 0.25 0.10 [ms]
+139  Stim_lim_X ........................: 31.191401 [T/s]
+140  Stim_lim_Y ........................: 16.979700 [T/s]
+141  Stim_lim_Z ........................: 26.834900 [T/s]
+142  Stim_thresh_X .....................: 24.953100 [T/s]
+143  Stim_thresh_Y .....................: 13.583800 [T/s]
+144  Stim_thresh_Z .....................: 21.467899 [T/s]
+145  G_scal(X) .........................: 0.374300 [mT/(mT/m)]
+146  G_scal(Y) .........................: 0.337300 [mT/(mT/m)]
+147  G_scal(Z) .........................: 0.305500 [mT/(mT/m)]
+148  Delta_t ...........................: 0.010000 [ms]
+149  Stim_factor .......................: 1.000000
+
+-----------------------------------------------------------------------------
+II.) Lookahead Parameter                               11.Jun.2026  18:57:45
+-----------------------------------------------------------------------------
+Parameter of protocol
+200  Protocol name .....................: rf_pulse
+201  Sequence name .....................: %ServiceSeq%\rf_pulse
+202  Sequence consistency check enabled : false
+203  Mode ..............................: Patient
+
+Parameter of sequence
+204  Lookahead_factor ..................: 1.020000
+
+Parameter of dBdt-algorithm
+205  Stim_legal_thresh_flag ............: false
+206  Stim_legal_limit_flag .............: false
+207  dBdt_max_tot ......................: 0.000000 [T/s]
+208  dBdt_max_rel ......................: 0.000000
+209  T_pulse_max .......................: 0.000000 [ms]
+210  dBdt_max_thresh ...................: 0.000000 [T/s]
+211  dBdt_max_limit ....................: 0.000000 [T/s]
+
+Parameter of SAFE-algorithm
+212  Stim_max_total_ahead ..............: 0.000000
+213  Stim_max_total_norm_ahead .........:  0.00 %
+214  Stim_max_X_ahead ..................: 0.000000 [T/s]
+215  Stim_max_Y_ahead ..................: 0.000000 [T/s]
+216  Stim_max_Z_ahead ..................: 0.000000 [T/s]
+217  Stim_thresh_flag_ahead ............: false
+218  Stim_limit_flag_ahead .............: false
+
+-----------------------------------------------------------------------------
+III.) Online Parameter                                 11.Jun.2026  18:57:49
+-----------------------------------------------------------------------------
+User dependent parameter
+300  First_Level_Mode_Flag .............: false
+
+Parameter of SAFE-algorithm
+301  Stim_max_total_online .............: 0.050125
+302  Stim_max_total_norm_online ........:  5.01 %
+303  Stim_max_X_online .................: 0.387750 [T/s]
+304  Stim_max_Y_online .................: 0.411872 [T/s]
+305  Stim_max_Z_online .................: 1.128842 [T/s]
+306  Stim_threshold_flag_online ........: false
+307  Stim_limit_flag_online ............: false
+
+-----------------------------------------------------------------------------
+II.) Lookahead Parameter                               11.Jun.2026  18:58:40
+-----------------------------------------------------------------------------
+Parameter of protocol
+200  Protocol name .....................: rf_pulse
+201  Sequence name .....................: %ServiceSeq%\rf_pulse
+202  Sequence consistency check enabled : false
+203  Mode ..............................: Patient
+
+Parameter of sequence
+204  Lookahead_factor ..................: 1.020000
+
+Parameter of dBdt-algorithm
+205  Stim_legal_thresh_flag ............: false
+206  Stim_legal_limit_flag .............: false
+207  dBdt_max_tot ......................: 0.000000 [T/s]
+208  dBdt_max_rel ......................: 0.000000
+209  T_pulse_max .......................: 0.000000 [ms]
+210  dBdt_max_thresh ...................: 0.000000 [T/s]
+211  dBdt_max_limit ....................: 0.000000 [T/s]
+
+Parameter of SAFE-algorithm
+212  Stim_max_total_ahead ..............: 0.000000
+213  Stim_max_total_norm_ahead .........:  0.00 %
+214  Stim_max_X_ahead ..................: 0.000000 [T/s]
+215  Stim_max_Y_ahead ..................: 0.000000 [T/s]
+216  Stim_max_Z_ahead ..................: 0.000000 [T/s]
+217  Stim_thresh_flag_ahead ............: false
+218  Stim_limit_flag_ahead .............: false
+
+-----------------------------------------------------------------------------
+III.) Online Parameter                                 11.Jun.2026  18:58:43
+-----------------------------------------------------------------------------
+User dependent parameter
+300  First_Level_Mode_Flag .............: false
+
+Parameter of SAFE-algorithm
+301  Stim_max_total_online .............: 0.050635
+302  Stim_max_total_norm_online ........:  5.06 %
+303  Stim_max_X_online .................: 0.398829 [T/s]
+304  Stim_max_Y_online .................: 0.414803 [T/s]
+305  Stim_max_Z_online .................: 1.139670 [T/s]
+306  Stim_threshold_flag_online ........: false
+307  Stim_limit_flag_online ............: false
+
+-----------------------------------------------------------------------------
+II.) Lookahead Parameter                               11.Jun.2026  18:59:41
+-----------------------------------------------------------------------------
+Parameter of protocol
+200  Protocol name .....................: rf_pulse
+201  Sequence name .....................: %ServiceSeq%\rf_pulse
+202  Sequence consistency check enabled : false
+203  Mode ..............................: Patient
+
+Parameter of sequence
+204  Lookahead_factor ..................: 1.020000
+
+Parameter of dBdt-algorithm
+205  Stim_legal_thresh_flag ............: false
+206  Stim_legal_limit_flag .............: false
+207  dBdt_max_tot ......................: 0.000000 [T/s]
+208  dBdt_max_rel ......................: 0.000000
+209  T_pulse_max .......................: 0.000000 [ms]
+210  dBdt_max_thresh ...................: 0.000000 [T/s]
+211  dBdt_max_limit ....................: 0.000000 [T/s]
+
+Parameter of SAFE-algorithm
+212  Stim_max_total_ahead ..............: 0.000000
+213  Stim_max_total_norm_ahead .........:  0.00 %
+214  Stim_max_X_ahead ..................: 0.000000 [T/s]
+215  Stim_max_Y_ahead ..................: 0.000000 [T/s]
+216  Stim_max_Z_ahead ..................: 0.000000 [T/s]
+217  Stim_thresh_flag_ahead ............: false
+218  Stim_limit_flag_ahead .............: false
+
+-----------------------------------------------------------------------------
+III.) Online Parameter                                 11.Jun.2026  18:59:51
+-----------------------------------------------------------------------------
+User dependent parameter
+300  First_Level_Mode_Flag .............: false
+
+Parameter of SAFE-algorithm
+301  Stim_max_total_online .............: 0.050568
+302  Stim_max_total_norm_online ........:  5.06 %
+303  Stim_max_X_online .................: 0.390520 [T/s]
+304  Stim_max_Y_online .................: 0.417735 [T/s]
+305  Stim_max_Z_online .................: 1.136963 [T/s]
+306  Stim_threshold_flag_online ........: false
+307  Stim_limit_flag_online ............: false
+
+-----------------------------------------------------------------------------
+II.) Lookahead Parameter                               11.Jun.2026  19:00:16
+-----------------------------------------------------------------------------
+Parameter of protocol
+200  Protocol name .....................: rf_pulse
+201  Sequence name .....................: %ServiceSeq%\rf_pulse
+202  Sequence consistency check enabled : false
+203  Mode ..............................: Patient
+
+Parameter of sequence
+204  Lookahead_factor ..................: 1.020000
+
+Parameter of dBdt-algorithm
+205  Stim_legal_thresh_flag ............: false
+206  Stim_legal_limit_flag .............: false
+207  dBdt_max_tot ......................: 0.000000 [T/s]
+208  dBdt_max_rel ......................: 0.000000
+209  T_pulse_max .......................: 0.000000 [ms]
+210  dBdt_max_thresh ...................: 0.000000 [T/s]
+211  dBdt_max_limit ....................: 0.000000 [T/s]
+
+Parameter of SAFE-algorithm
+212  Stim_max_total_ahead ..............: 0.000000
+213  Stim_max_total_norm_ahead .........:  0.00 %
+214  Stim_max_X_ahead ..................: 0.000000 [T/s]
+215  Stim_max_Y_ahead ..................: 0.000000 [T/s]
+216  Stim_max_Z_ahead ..................: 0.000000 [T/s]
+217  Stim_thresh_flag_ahead ............: false
+218  Stim_limit_flag_ahead .............: false
+
+-----------------------------------------------------------------------------
+III.) Online Parameter                                 11.Jun.2026  19:00:21
+-----------------------------------------------------------------------------
+User dependent parameter
+300  First_Level_Mode_Flag .............: false
+
+Parameter of SAFE-algorithm
+301  Stim_max_total_online .............: 0.050188
+302  Stim_max_total_norm_online ........:  5.02 %
+303  Stim_max_X_online .................: 0.390520 [T/s]
+304  Stim_max_Y_online .................: 0.416269 [T/s]
+305  Stim_max_Z_online .................: 1.126135 [T/s]
+306  Stim_threshold_flag_online ........: false
+307  Stim_limit_flag_online ............: false
+
+-----------------------------------------------------------------------------
+II.) Lookahead Parameter                               11.Jun.2026  19:00:48
+-----------------------------------------------------------------------------
+Parameter of protocol
+200  Protocol name .....................: rf_pulse
+201  Sequence name .....................: %ServiceSeq%\rf_pulse
+202  Sequence consistency check enabled : false
+203  Mode ..............................: Patient
+
+Parameter of sequence
+204  Lookahead_factor ..................: 1.020000
+
+Parameter of dBdt-algorithm
+205  Stim_legal_thresh_flag ............: false
+206  Stim_legal_limit_flag .............: false
+207  dBdt_max_tot ......................: 0.000000 [T/s]
+208  dBdt_max_rel ......................: 0.000000
+209  T_pulse_max .......................: 0.000000 [ms]
+210  dBdt_max_thresh ...................: 0.000000 [T/s]
+211  dBdt_max_limit ....................: 0.000000 [T/s]
+
+Parameter of SAFE-algorithm
+212  Stim_max_total_ahead ..............: 0.000000
+213  Stim_max_total_norm_ahead .........:  0.00 %
+214  Stim_max_X_ahead ..................: 0.000000 [T/s]
+215  Stim_max_Y_ahead ..................: 0.000000 [T/s]
+216  Stim_max_Z_ahead ..................: 0.000000 [T/s]
+217  Stim_thresh_flag_ahead ............: false
+218  Stim_limit_flag_ahead .............: false
+
+-----------------------------------------------------------------------------
+III.) Online Parameter                                 11.Jun.2026  19:00:51
+-----------------------------------------------------------------------------
+User dependent parameter
+300  First_Level_Mode_Flag .............: false
+
+Parameter of SAFE-algorithm
+301  Stim_max_total_online .............: 0.050214
+302  Stim_max_total_norm_online ........:  5.02 %
+303  Stim_max_X_online .................: 0.398829 [T/s]
+304  Stim_max_Y_online .................: 0.411872 [T/s]
+305  Stim_max_Z_online .................: 1.128842 [T/s]
+306  Stim_threshold_flag_online ........: false
+307  Stim_limit_flag_online ............: false
+
+-----------------------------------------------------------------------------
+II.) Lookahead Parameter                               11.Jun.2026  19:01:44
+-----------------------------------------------------------------------------
+Parameter of protocol
+200  Protocol name .....................: rf_pulse
+201  Sequence name .....................: %ServiceSeq%\rf_pulse
+202  Sequence consistency check enabled : false
+203  Mode ..............................: Patient
+
+Parameter of sequence
+204  Lookahead_factor ..................: 1.020000
+
+Parameter of dBdt-algorithm
+205  Stim_legal_thresh_flag ............: false
+206  Stim_legal_limit_flag .............: false
+207  dBdt_max_tot ......................: 0.000000 [T/s]
+208  dBdt_max_rel ......................: 0.000000
+209  T_pulse_max .......................: 0.000000 [ms]
+210  dBdt_max_thresh ...................: 0.000000 [T/s]
+211  dBdt_max_limit ....................: 0.000000 [T/s]
+
+Parameter of SAFE-algorithm
+212  Stim_max_total_ahead ..............: 0.000000
+213  Stim_max_total_norm_ahead .........:  0.00 %
+214  Stim_max_X_ahead ..................: 0.000000 [T/s]
+215  Stim_max_Y_ahead ..................: 0.000000 [T/s]
+216  Stim_max_Z_ahead ..................: 0.000000 [T/s]
+217  Stim_thresh_flag_ahead ............: false
+218  Stim_limit_flag_ahead .............: false
+
+-----------------------------------------------------------------------------
+III.) Online Parameter                                 11.Jun.2026  19:17:06
+-----------------------------------------------------------------------------
+User dependent parameter
+300  First_Level_Mode_Flag .............: false
+
+Parameter of SAFE-algorithm
+301  Stim_max_total_online .............: 0.049911
+302  Stim_max_total_norm_online ........:  4.99 %
+303  Stim_max_X_online .................: 0.382211 [T/s]
+304  Stim_max_Y_online .................: 0.411872 [T/s]
+305  Stim_max_Z_online .................: 1.123428 [T/s]
+306  Stim_threshold_flag_online ........: false
+307  Stim_limit_flag_online ............: false
+
+-----------------------------------------------------------------------------
+II.) Lookahead Parameter                               11.Jun.2026  19:40:30
+-----------------------------------------------------------------------------
+Parameter of protocol
+200  Protocol name .....................: rf_pulse
+201  Sequence name .....................: %ServiceSeq%\rf_pulse
+202  Sequence consistency check enabled : false
+203  Mode ..............................: Patient
+
+Parameter of sequence
+204  Lookahead_factor ..................: 1.020000
+
+Parameter of dBdt-algorithm
+205  Stim_legal_thresh_flag ............: false
+206  Stim_legal_limit_flag .............: false
+207  dBdt_max_tot ......................: 0.000000 [T/s]
+208  dBdt_max_rel ......................: 0.000000
+209  T_pulse_max .......................: 0.000000 [ms]
+210  dBdt_max_thresh ...................: 0.000000 [T/s]
+211  dBdt_max_limit ....................: 0.000000 [T/s]
+
+Parameter of SAFE-algorithm
+212  Stim_max_total_ahead ..............: 0.000000
+213  Stim_max_total_norm_ahead .........:  0.00 %
+214  Stim_max_X_ahead ..................: 0.000000 [T/s]
+215  Stim_max_Y_ahead ..................: 0.000000 [T/s]
+216  Stim_max_Z_ahead ..................: 0.000000 [T/s]
+217  Stim_thresh_flag_ahead ............: false
+218  Stim_limit_flag_ahead .............: false
+
+-----------------------------------------------------------------------------
+III.) Online Parameter                                 11.Jun.2026  19:55:52
+-----------------------------------------------------------------------------
+User dependent parameter
+300  First_Level_Mode_Flag .............: false
+
+Parameter of SAFE-algorithm
+301  Stim_max_total_online .............: 0.050528
+302  Stim_max_total_norm_online ........:  5.05 %
+303  Stim_max_X_online .................: 0.396059 [T/s]
+304  Stim_max_Y_online .................: 0.414803 [T/s]
+305  Stim_max_Z_online .................: 1.136963 [T/s]
+306  Stim_threshold_flag_online ........: false
+307  Stim_limit_flag_online ............: false
+
+-----------------------------------------------------------------------------
+II.) Lookahead Parameter                               11.Jun.2026  20:06:33
+-----------------------------------------------------------------------------
+Parameter of protocol
+200  Protocol name .....................: rf_pulse
+201  Sequence name .....................: %ServiceSeq%\rf_pulse
+202  Sequence consistency check enabled : false
+203  Mode ..............................: Patient
+
+Parameter of sequence
+204  Lookahead_factor ..................: 1.020000
+
+Parameter of dBdt-algorithm
+205  Stim_legal_thresh_flag ............: false
+206  Stim_legal_limit_flag .............: false
+207  dBdt_max_tot ......................: 0.000000 [T/s]
+208  dBdt_max_rel ......................: 0.000000
+209  T_pulse_max .......................: 0.000000 [ms]
+210  dBdt_max_thresh ...................: 0.000000 [T/s]
+211  dBdt_max_limit ....................: 0.000000 [T/s]
+
+Parameter of SAFE-algorithm
+212  Stim_max_total_ahead ..............: 0.000000
+213  Stim_max_total_norm_ahead .........:  0.00 %
+214  Stim_max_X_ahead ..................: 0.000000 [T/s]
+215  Stim_max_Y_ahead ..................: 0.000000 [T/s]
+216  Stim_max_Z_ahead ..................: 0.000000 [T/s]
+217  Stim_thresh_flag_ahead ............: false
+218  Stim_limit_flag_ahead .............: false
+
+-----------------------------------------------------------------------------
+III.) Online Parameter                                 11.Jun.2026  20:21:55
+-----------------------------------------------------------------------------
+User dependent parameter
+300  First_Level_Mode_Flag .............: false
+
+Parameter of SAFE-algorithm
+301  Stim_max_total_online .............: 0.050273
+302  Stim_max_total_norm_online ........:  5.03 %
+303  Stim_max_X_online .................: 0.390520 [T/s]
+304  Stim_max_Y_online .................: 0.413338 [T/s]
+305  Stim_max_Z_online .................: 1.131549 [T/s]
+306  Stim_threshold_flag_online ........: false
+307  Stim_limit_flag_online ............: false
+
+-----------------------------------------------------------------------------
+II.) Lookahead Parameter                               11.Jun.2026  20:44:07
+-----------------------------------------------------------------------------
+Parameter of protocol
+200  Protocol name .....................: rf_pulse
+201  Sequence name .....................: %ServiceSeq%\rf_pulse
+202  Sequence consistency check enabled : false
+203  Mode ..............................: Patient
+
+Parameter of sequence
+204  Lookahead_factor ..................: 1.020000
+
+Parameter of dBdt-algorithm
+205  Stim_legal_thresh_flag ............: false
+206  Stim_legal_limit_flag .............: false
+207  dBdt_max_tot ......................: 0.000000 [T/s]
+208  dBdt_max_rel ......................: 0.000000
+209  T_pulse_max .......................: 0.000000 [ms]
+210  dBdt_max_thresh ...................: 0.000000 [T/s]
+211  dBdt_max_limit ....................: 0.000000 [T/s]
+
+Parameter of SAFE-algorithm
+212  Stim_max_total_ahead ..............: 0.000000
+213  Stim_max_total_norm_ahead .........:  0.00 %
+214  Stim_max_X_ahead ..................: 0.000000 [T/s]
+215  Stim_max_Y_ahead ..................: 0.000000 [T/s]
+216  Stim_max_Z_ahead ..................: 0.000000 [T/s]
+217  Stim_thresh_flag_ahead ............: false
+218  Stim_limit_flag_ahead .............: false
+
+-----------------------------------------------------------------------------
+III.) Online Parameter                                 11.Jun.2026  20:59:29
+-----------------------------------------------------------------------------
+User dependent parameter
+300  First_Level_Mode_Flag .............: false
+
+Parameter of SAFE-algorithm
+301  Stim_max_total_online .............: 0.050613
+302  Stim_max_total_norm_online ........:  5.06 %
+303  Stim_max_X_online .................: 0.396059 [T/s]
+304  Stim_max_Y_online .................: 0.414803 [T/s]
+305  Stim_max_Z_online .................: 1.139670 [T/s]
+306  Stim_threshold_flag_online ........: false
+307  Stim_limit_flag_online ............: false
+
+-----------------------------------------------------------------------------
+II.) Lookahead Parameter                               11.Jun.2026  21:39:40
+-----------------------------------------------------------------------------
+Parameter of protocol
+200  Protocol name .....................: rf_pulse
+201  Sequence name .....................: %ServiceSeq%\rf_pulse
+202  Sequence consistency check enabled : false
+203  Mode ..............................: Patient
+
+Parameter of sequence
+204  Lookahead_factor ..................: 1.020000
+
+Parameter of dBdt-algorithm
+205  Stim_legal_thresh_flag ............: false
+206  Stim_legal_limit_flag .............: false
+207  dBdt_max_tot ......................: 0.000000 [T/s]
+208  dBdt_max_rel ......................: 0.000000
+209  T_pulse_max .......................: 0.000000 [ms]
+210  dBdt_max_thresh ...................: 0.000000 [T/s]
+211  dBdt_max_limit ....................: 0.000000 [T/s]
+
+Parameter of SAFE-algorithm
+212  Stim_max_total_ahead ..............: 0.000000
+213  Stim_max_total_norm_ahead .........:  0.00 %
+214  Stim_max_X_ahead ..................: 0.000000 [T/s]
+215  Stim_max_Y_ahead ..................: 0.000000 [T/s]
+216  Stim_max_Z_ahead ..................: 0.000000 [T/s]
+217  Stim_thresh_flag_ahead ............: false
+218  Stim_limit_flag_ahead .............: false
+
+-----------------------------------------------------------------------------
+III.) Online Parameter                                 11.Jun.2026  21:55:02
+-----------------------------------------------------------------------------
+User dependent parameter
+300  First_Level_Mode_Flag .............: false
+
+Parameter of SAFE-algorithm
+301  Stim_max_total_online .............: 0.049978
+302  Stim_max_total_norm_online ........:  5.00 %
+303  Stim_max_X_online .................: 0.384980 [T/s]
+304  Stim_max_Y_online .................: 0.407475 [T/s]
+305  Stim_max_Z_online .................: 1.128842 [T/s]
+306  Stim_threshold_flag_online ........: false
+307  Stim_limit_flag_online ............: false
+
+-----------------------------------------------------------------------------
+II.) Lookahead Parameter                               11.Jun.2026  22:07:24
+-----------------------------------------------------------------------------
+Parameter of protocol
+200  Protocol name .....................: rf_pulse
+201  Sequence name .....................: %ServiceSeq%\rf_pulse
+202  Sequence consistency check enabled : false
+203  Mode ..............................: Patient
+
+Parameter of sequence
+204  Lookahead_factor ..................: 1.020000
+
+Parameter of dBdt-algorithm
+205  Stim_legal_thresh_flag ............: false
+206  Stim_legal_limit_flag .............: false
+207  dBdt_max_tot ......................: 0.000000 [T/s]
+208  dBdt_max_rel ......................: 0.000000
+209  T_pulse_max .......................: 0.000000 [ms]
+210  dBdt_max_thresh ...................: 0.000000 [T/s]
+211  dBdt_max_limit ....................: 0.000000 [T/s]
+
+Parameter of SAFE-algorithm
+212  Stim_max_total_ahead ..............: 0.000000
+213  Stim_max_total_norm_ahead .........:  0.00 %
+214  Stim_max_X_ahead ..................: 0.000000 [T/s]
+215  Stim_max_Y_ahead ..................: 0.000000 [T/s]
+216  Stim_max_Z_ahead ..................: 0.000000 [T/s]
+217  Stim_thresh_flag_ahead ............: false
+218  Stim_limit_flag_ahead .............: false
+
+-----------------------------------------------------------------------------
+III.) Online Parameter                                 11.Jun.2026  22:22:46
+-----------------------------------------------------------------------------
+User dependent parameter
+300  First_Level_Mode_Flag .............: false
+
+Parameter of SAFE-algorithm
+301  Stim_max_total_online .............: 0.050677
+302  Stim_max_total_norm_online ........:  5.07 %
+303  Stim_max_X_online .................: 0.398829 [T/s]
+304  Stim_max_Y_online .................: 0.416269 [T/s]
+305  Stim_max_Z_online .................: 1.139670 [T/s]
+306  Stim_threshold_flag_online ........: false
+307  Stim_limit_flag_online ............: false
