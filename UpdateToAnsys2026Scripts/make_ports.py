@@ -13,9 +13,11 @@ Workflow
 3. Verifies the coil is centered on the Z axis in XY (bounding-box check) and
    finds the axial midplane z_mid used for the upper->lower mirror.
 4. Upper ring : rotate reference corners about +Z by k*(360/N) deg, k=0..N-1.
-   Lower ring : 180-deg rotation about the X-directed axis through
-                (0, 0, z_mid), i.e. (x, y, z) -> (x, -y, 2*z_mid - z),
-                then optional LOWER_RING_PHI_OFFSET, then the same Z rotations.
+   Lower ring : 180-deg rotation about the RADIAL axis through (0, 0, z_mid)
+                at the reference rectangle's azimuth, so each lower-ring port
+                lands at the same azimuth as (directly below) its same-numbered
+                upper-ring counterpart; then optional LOWER_RING_PHI_OFFSET,
+                then the same Z rotations.
 5. For every corner set, creates a covered-polyline sheet "PortSheet_<Uxx|Lxx>"
    and a lumped port "P_<Uxx|Lxx>" whose integration line runs from the
    midpoint of one conductor-side edge to the midpoint of the opposite edge
@@ -70,11 +72,16 @@ LOWER_RING_PHI_OFFSET = 0.0     # deg, if lower-ring gaps are azimuthally stagge
 #   "12-30" — integration line mid(v1,v2) -> mid(v3,v0)
 INT_LINE_PAIRING = "auto"
 
-# The 180-deg X rotation mirrors the circumferential direction, so lower-ring
-# integration lines point the opposite way around the ring than upper-ring
-# ones. Set True to swap the lower-ring endpoints for a consistent polarity
-# convention around both rings.
-FLIP_LOWER_INT_LINES = False
+# Swap the start/end points of EVERY integration line (keeps the same edge
+# pairing, reverses the arrow direction). Use when the pairing is right but
+# the polarity is backwards.
+REVERSE_INT_LINES = True
+
+# The 180-deg radial-axis rotation mirrors the circumferential direction, so
+# lower-ring integration lines point the opposite way around the ring than
+# upper-ring ones. Set True to swap the lower-ring endpoints for a consistent
+# polarity convention around both rings.
+FLIP_LOWER_INT_LINES = True
 
 TEST_MODE = False       # True: create ONLY PortSheet_U01/P_U01, then stop so
                         # you can visually confirm it coincides with REF_RECT.
@@ -96,11 +103,19 @@ def rot_z(deg):
                      [0.0,        0.0,       1.0]])
 
 
-def mirror_about_x_axis_at(z_mid, pts):
-    """180-deg rotation about the X-directed axis through (0, 0, z_mid)."""
-    out = pts.copy()
-    out[:, 1] = -out[:, 1]
-    out[:, 2] = 2.0 * z_mid - out[:, 2]
+def mirror_about_radial_axis_at(phi_deg, z_mid, pts):
+    """180-deg rotation about the radial axis at azimuth phi_deg through
+    (0, 0, z_mid).
+
+    Points at azimuth phi_deg stay at azimuth phi_deg, so the lower-ring
+    port generated from the reference lands directly below it (same x, y)."""
+    a = np.radians(phi_deg)
+    c, s = np.cos(a), np.sin(a)
+    R = np.array([[2.0 * c * c - 1.0, 2.0 * c * s,       0.0],
+                  [2.0 * c * s,       2.0 * s * s - 1.0, 0.0],
+                  [0.0,               0.0,              -1.0]])
+    out = (R @ pts.T).T
+    out[:, 2] += 2.0 * z_mid
     return out
 
 
@@ -137,17 +152,18 @@ def pick_int_line_pairing(corners):
 
 def cleanup(hfss):
     """Delete anything this script may have created on a previous run."""
-    removed_b = []
-    for bd in list(hfss.boundaries):
-        if PORT_RE.match(bd.name):
-            bd.delete()
-            removed_b.append(bd.name)
+    removed_b = [bd.name for bd in hfss.boundaries if PORT_RE.match(bd.name)]
+    if removed_b:
+        print(f"[cleanup] deleting {len(removed_b)} old ports (one batched "
+              "call)...", flush=True)
+        hfss.oboundary.DeleteBoundaries(removed_b)
     sheets = [o for o in hfss.modeler.get_objects_w_string("PortSheet_")
               if SHEET_RE.match(o)]
     if sheets:
+        print(f"[cleanup] deleting {len(sheets)} old sheets...", flush=True)
         hfss.modeler.delete(sheets)
     print(f"[cleanup] removed {len(removed_b)} old ports, "
-          f"{len(sheets)} old sheets")
+          f"{len(sheets)} old sheets", flush=True)
 
 
 def main():
@@ -190,10 +206,17 @@ def main():
                   "12-30": ((1, 2), (3, 0))}[pairing]
     else:
         raise RuntimeError(f"Bad INT_LINE_PAIRING: {INT_LINE_PAIRING!r}")
+    if REVERSE_INT_LINES:
+        sa, sb = sb, sa
+        print("[pairing] REVERSE_INT_LINES: integration-line start/end swapped")
 
     # ---- build all port definitions ----------------------------------------
     step = 360.0 / N_PER_RING
-    lower = mirror_about_x_axis_at(z_mid, corners)
+    ref_center = corners.mean(axis=0)
+    phi_ref = np.degrees(np.arctan2(ref_center[1], ref_center[0]))
+    print(f"[mirror] lower ring: 180-deg rotation about the radial axis at "
+          f"azimuth {phi_ref:.3f} deg (P_Lxx directly below P_Uxx)")
+    lower = mirror_about_radial_axis_at(phi_ref, z_mid, corners)
     port_defs = []   # (name, corners(4,3), int_start(3,), int_end(3,))
     for ring, base, phi0 in (("U", corners, 0.0),
                              ("L", lower, LOWER_RING_PHI_OFFSET)):
@@ -255,7 +278,7 @@ def main():
             print(f"         {line}")
 
     if not FLIP_LOWER_INT_LINES:
-        print("\n[NOTE  ] The 180-deg X mirror reverses the circumferential "
+        print("\n[NOTE  ] The 180-deg radial-axis mirror reverses the circumferential "
               "direction on the lower ring, so P_Lxx integration lines are "
               "oriented opposite to P_Uxx relative to the ring direction. "
               "If you want one consistent polarity convention, set "
